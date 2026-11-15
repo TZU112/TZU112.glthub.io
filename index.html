@@ -1,0 +1,367 @@
+<!-- 檔名：index.html -->
+<!DOCTYPE html>
+<html lang="zh-Hant" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- Google Search Console 驗證標記（請勿刪除） -->
+  <meta name="google-site-verification" content="lAP1_csDyrQOFrxRP9ETUXbbzyHLRM7jEVZhBGslohI" />
+
+  <!-- SEO 基本設定（依據資料表第 1、2 部分與網址自動彙整） -->
+  <title>TZU112｜接案設計師・新竹縣市</title>
+  <meta name="description" content="TZU112 個人網站 - 新竹縣市接案設計師，結合人工智慧與設計創意，擅長把難的東西講簡單，提供可靠、有創意、好溝通的合作體驗。" />
+  <link rel="canonical" href="https://jennyroby3636-bot.github.io/" />
+
+  <!-- Open Graph 社群分享標籤 -->
+  <meta property="og:title" content="TZU112｜接案設計師・新竹縣市" />
+  <meta property="og:description" content="TZU112 個人網站 - 新竹縣市接案設計師，結合人工智慧與設計創意，擅長把難的東西講簡單，提供可靠、有創意、好溝通的合作體驗。" />
+  <meta property="og:image" content="https://picsum.photos/seed/tzuhsuan-hero/1200/630" />
+  <meta property="og:url" content="https://jennyroby3636-bot.github.io/" />
+  <meta property="og:type" content="website" />
+
+  <!-- Emoji 網站小圖示 (Favicon) -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎨</text></svg>" />
+
+  <!-- 引入 Google Fonts 思源黑體與 Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Plus+Jakarta+Sans:wght@600;700&display=swap" rel="stylesheet" />
+
+  <!-- 引入 Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', '"Noto Sans TC"', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#f0fdfa',
+              100: '#ccfbf1',
+              500: '#14b8a6',
+              600: '#0d9488',
+              700: '#0f766e',
+              900: '#134e4a',
+            },
+            warm: {
+              50: '#faf9f6',
+              100: '#f3f0ea',
+              800: '#292524',
+              900: '#1c1917',
+            }
+          }
+        }
+      }
+    };
+  </script>
+
+  <!-- JSON-LD 結構化資料 (Person) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "TZU112",
+    "jobTitle": "接案設計師",
+    "url": "https://jennyroby3636-bot.github.io/",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "新竹縣市",
+      "addressCountry": "TW"
+    },
+    "knowsAbout": ["人工智慧", "接案設計"]
+  }
+  </script>
+
+  <style>
+    /* 確保手機寬度 375px 絕不左右捲動，且字體大小易讀 */
+    html, body {
+      max-width: 100%;
+      overflow-x: hidden;
+      font-size: 16px;
+      line-height: 1.75;
+    }
+  </style>
+</head>
+<body class="bg-warm-50 text-warm-900 antialiased selection:bg-brand-100 selection:text-brand-900">
+
+  <!-- 1. 導覽列 -->
+  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-stone-200/80">
+    <div class="max-w-5xl mx-auto px-5 h-16 flex items-center justify-between">
+      <!-- 網站名稱與文字頭像 -->
+      <a href="#top" class="flex items-center gap-3 group">
+        <span class="w-9 h-9 rounded-full bg-brand-600 text-white font-bold flex items-center justify-center text-lg shadow-sm group-hover:bg-brand-700 transition-colors">
+          T
+        </span>
+        <span class="font-bold text-xl tracking-tight text-warm-900">TZU112</span>
+      </a>
+
+      <!-- 桌面版選單 -->
+      <nav class="hidden md:flex items-center gap-8 text-base font-medium text-stone-600">
+        <a href="#about" class="hover:text-brand-600 transition-colors">關於我</a>
+        <a href="#contact" class="px-5 py-2.5 rounded-full bg-brand-600 text-white hover:bg-brand-700 transition-colors shadow-sm">
+          聯絡合作
+        </a>
+      </nav>
+
+      <!-- 手機版漢堡選單按鈕 -->
+      <button id="menu-btn" type="button" aria-label="開啟主選單" aria-expanded="false" class="md:hidden p-2.5 rounded-xl text-stone-700 hover:bg-stone-100 focus:outline-none focus:ring-2 focus:ring-brand-500">
+        <svg id="icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+        <svg id="icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- 手機版展開選單 -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-stone-200 px-5 py-4 space-y-3">
+      <a href="#about" class="mobile-link block py-3 px-4 rounded-xl text-base font-medium text-stone-700 hover:bg-brand-50 hover:text-brand-700">
+        關於我
+      </a>
+      <a href="#contact" class="mobile-link block py-3 px-4 rounded-xl text-base font-medium bg-brand-600 text-white text-center hover:bg-brand-700">
+        聯絡合作
+      </a>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- 2. 開場 (Hero) 區塊：左右分欄＋背景質感 -->
+    <section class="relative overflow-hidden bg-gradient-to-br from-brand-50 via-warm-50 to-amber-50/60 py-14 md:py-24 border-b border-stone-200/60">
+      <div class="max-w-5xl mx-auto px-5 grid grid-cols-1 md:grid-cols-12 gap-10 items-center">
+        
+        <!-- 左側文字資訊 -->
+        <div class="md:col-span-7 space-y-6">
+          <!-- 身分與服務地區徽章 -->
+          <div class="inline-flex flex-wrap items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-brand-200 text-brand-700 text-base font-medium shadow-sm">
+            <span>🎨 接案設計師</span>
+            <span class="text-stone-300">|</span>
+            <span>📍 新竹縣市</span>
+          </div>
+
+          <!-- 唯一 H1：顯示名字 -->
+          <div>
+            <h1 class="text-4xl md:text-5xl font-bold tracking-tight text-warm-900 mb-3">
+              TZU112
+            </h1>
+            <p class="text-xl md:text-2xl font-bold text-brand-700 leading-snug">
+              把複雜的想法變簡單，陪你一起設計出有溫度的好作品。
+            </p>
+          </div>
+
+          <!-- 開場簡介 -->
+          <p class="text-base md:text-lg text-stone-700 leading-relaxed">
+            哈囉！我是 TZU112，目前在新竹縣市在地推動設計與人工智慧應用，希望能用<strong>可靠、有創意、好溝通</strong>的方式，陪你一起把想法落地！
+          </p>
+
+          <!-- 關鍵字與特質標籤 -->
+          <div class="flex flex-wrap gap-2.5 pt-1">
+            <span class="px-3.5 py-1.5 rounded-lg bg-brand-600/10 text-brand-800 font-medium text-base">
+              🤖 人工智慧
+            </span>
+            <span class="px-3.5 py-1.5 rounded-lg bg-white border border-stone-200 text-stone-700 text-base">
+              ✨ 有創意
+            </span>
+            <span class="px-3.5 py-1.5 rounded-lg bg-white border border-stone-200 text-stone-700 text-base">
+              🤝 好溝通
+            </span>
+            <span class="px-3.5 py-1.5 rounded-lg bg-white border border-stone-200 text-stone-700 text-base">
+              🛡️ 可靠
+            </span>
+          </div>
+
+          <!-- 行動按鈕 (CTA)：對應 1-3 看我的作品（先導向關於我認識設計理念） -->
+          <div class="pt-2 flex flex-wrap gap-4">
+            <a href="#about" class="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-brand-600 text-white font-bold text-base hover:bg-brand-700 transition-all shadow-md hover:shadow-lg">
+              <span>認識我的設計與作品理念</span>
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- 右側開場主視覺大圖 -->
+        <div class="md:col-span-5">
+          <div class="relative rounded-3xl overflow-hidden shadow-xl border-4 border-white bg-stone-200 aspect-[4/3]">
+            <img
+              src="hero.jpg"
+              alt="TZU112 在新竹縣市的工作與設計日常場景"
+              loading="lazy"
+              onerror="this.onerror=null;this.src='https://picsum.photos/seed/tzuhsuan-hero/800/600';"
+              class="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 3. 關於我區塊：交錯白底＋左右圖文卡片排版 -->
+    <section id="about" class="py-16 md:py-24 bg-white">
+      <div class="max-w-5xl mx-auto px-5">
+        <div class="mb-10">
+          <span class="text-brand-600 font-bold tracking-wider uppercase text-base">ABOUT ME</span>
+          <h2 class="text-3xl font-bold text-warm-900 mt-1">關於我 👋</h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-10 items-center">
+          <!-- 左側個人工作照 / 文字頭像備援 -->
+          <div class="md:col-span-5">
+            <div class="relative rounded-3xl overflow-hidden shadow-lg border border-stone-100 bg-brand-50 aspect-square">
+              <img
+                src="about.jpg"
+                alt="TZU112 專注於設計與人工智慧學習的日常"
+                loading="lazy"
+                onerror="this.onerror=null;this.src='https://picsum.photos/seed/tzuhsuan-about/600/600';"
+                class="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+
+          <!-- 右側自我介紹文案與兩大核心卡片 -->
+          <div class="md:col-span-7 space-y-6">
+            <div class="space-y-4 text-base md:text-lg text-stone-700 leading-relaxed">
+              <p>
+                嗨，很高興認識你！我是一位在<strong>新竹縣市</strong>接案的設計師。我一直覺得，設計與科技不該讓人覺得有距離，溝通也不該充滿艱澀的術語。
+              </p>
+              <p>
+                在每一次的合作中，我都希望帶給客戶<strong>可靠、有創意、好溝通</strong>的體驗，陪你把腦海中的想法一步步變成看得見的作品。
+              </p>
+            </div>
+
+            <!-- 依據 4-1 填寫內容製作的兩張特色卡片 -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+              <div class="p-5 rounded-2xl bg-warm-50 border border-stone-200/80 space-y-2">
+                <div class="text-2xl">💡</div>
+                <h3 class="font-bold text-lg text-warm-900">把難的東西講簡單</h3>
+                <p class="text-base text-stone-600">
+                  這是我一路走來最喜歡做的事！用最直白、好懂的方式與你討論設計與需求，讓溝通零距離。
+                </p>
+              </div>
+
+              <div class="p-5 rounded-2xl bg-brand-50/70 border border-brand-100 space-y-2">
+                <div class="text-2xl">🚀</div>
+                <h3 class="font-bold text-lg text-warm-900">持續學習與新目標</h3>
+                <p class="text-base text-stone-600">
+                  平時積極關注人工智慧（AI）應用，不斷充實最近在學的新工具與目標，為設計注入更多新靈感。
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 區塊間視覺橫幅 -->
+    <div class="w-full h-44 md:h-56 overflow-hidden relative">
+      <img
+        src="https://picsum.photos/seed/tzuhsuan-banner/1400/400"
+        alt="設計靈感與人工智慧創意橫幅"
+        loading="lazy"
+        onerror="this.onerror=null;this.src='https://picsum.photos/seed/design-workspace/1400/400';"
+        class="w-full h-full object-cover"
+      />
+      <div class="absolute inset-0 bg-brand-900/45 flex items-center justify-center px-5 text-center">
+        <p class="text-white text-xl md:text-2xl font-bold tracking-wide drop-shadow">
+          「可靠、有創意、好溝通 —— 讓每一次設計合作都輕鬆愉快」
+        </p>
+      </div>
+    </div>
+
+    <!-- 4. 聯絡區塊：滿版暖色塊設計 -->
+    <section id="contact" class="py-16 md:py-24 bg-warm-100">
+      <div class="max-w-3xl mx-auto px-5 text-center space-y-6">
+        <div class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-brand-600 text-white text-2xl font-bold shadow-md mx-auto">
+          T
+        </div>
+        <h2 class="text-3xl font-bold text-warm-900">想聊聊設計或合作嗎？</h2>
+        <p class="text-base md:text-lg text-stone-700 leading-relaxed">
+          無論你是在<strong>新竹縣市</strong>有接案設計需求，或是想交流<strong>人工智慧</strong>在設計上的應用，都很歡迎與我聯繫，一起把難的東西變簡單！
+        </p>
+
+        <!-- 互動提示卡片（因 4-12 聯絡方式目前留白，提供網站網址與合作資訊） -->
+        <div class="bg-white p-6 md:p-8 rounded-3xl shadow-sm border border-stone-200/80 space-y-4">
+          <div class="flex flex-wrap justify-center gap-6 text-base text-stone-700">
+            <div class="flex items-center gap-2">
+              <span>📍</span>
+              <span>服務地區：<strong>新竹縣市</strong></span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span>🎨</span>
+              <span>接案身分：<strong>接案設計師</strong></span>
+            </div>
+          </div>
+          <div class="pt-2">
+            <button id="copy-url-btn" type="button" class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-brand-600 text-white font-bold text-base hover:bg-brand-700 transition-colors shadow-sm">
+              <span>📋 複製我的個人網站網址分享</span>
+            </button>
+            <p id="copy-feedback" class="text-brand-700 font-medium text-base mt-3 hidden">
+              ✅ 已複製網址：https://jennyroby3636-bot.github.io/
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 5. 頁尾 -->
+  <footer class="bg-warm-900 text-stone-400 py-10">
+    <div class="max-w-5xl mx-auto px-5 flex flex-col sm:flex-row items-center justify-between gap-4 text-base">
+      <div class="flex items-center gap-2.5 text-white font-bold">
+        <span class="w-7 h-7 rounded-full bg-brand-600 text-white flex items-center justify-center text-sm">T</span>
+        <span>TZU112</span>
+      </div>
+      <p class="text-center sm:text-right text-stone-400">
+        © 2026 TZU112 ｜ 新竹縣市接案設計師
+      </p>
+    </div>
+  </footer>
+
+  <!-- 基礎響應式選單與網址複製腳本 -->
+  <script>
+    // 手機版漢堡選單開關
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const iconOpen = document.getElementById('icon-open');
+    const iconClose = document.getElementById('icon-close');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
+
+    function toggleMenu() {
+      const isHidden = mobileMenu.classList.contains('hidden');
+      mobileMenu.classList.toggle('hidden');
+      iconOpen.classList.toggle('hidden', !isHidden);
+      iconClose.classList.toggle('hidden', isHidden);
+      menuBtn.setAttribute('aria-expanded', String(isHidden));
+    }
+
+    menuBtn.addEventListener('click', toggleMenu);
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        if (!mobileMenu.classList.contains('hidden')) {
+          toggleMenu();
+        }
+      });
+    });
+
+    // 複製網址按鈕互動（不使用 alert）
+    const copyBtn = document.getElementById('copy-url-btn');
+    const copyFeedback = document.getElementById('copy-feedback');
+    if (copyBtn) {
+      copyBtn.addEventListener('click', async () => {
+        try {
+          await navigator.clipboard.writeText('https://jennyroby3636-bot.github.io/');
+          copyFeedback.classList.remove('hidden');
+          setTimeout(() => copyFeedback.classList.add('hidden'), 3500);
+        } catch (err) {
+          copyFeedback.textContent = '網站網址：https://jennyroby3636-bot.github.io/';
+          copyFeedback.classList.remove('hidden');
+        }
+      });
+    }
+  </script>
+</body>
+</html>
